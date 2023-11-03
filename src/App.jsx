@@ -1,19 +1,26 @@
 import { useState } from "react";
 import "./App.css";
+import TodoList from "./component/TodoList";
 
 function App() {
-  const [todoList, setTodoList] = useState([]);
-  const [titleInput, setTitleInput] = useState("");
-  const [contentInput, setContentInput] = useState("");
-
-  // 제목 인풋 핸들러
+  const [todoList, setTodoList] = useState([]); // todo리스트 데이터
+  const [titleInput, setTitleInput] = useState(""); // 타이틀 인풋
+  const [contentInput, setContentInput] = useState(""); // 컨탠츠 인풋
+  /**
+   * 제목 인풋 핸들러
+   */
   const titleInputHaedler = (event) => {
     setTitleInput(event.target.value);
   };
-  // 컨탠츠 인풋 핸들러
+  /**
+   * 컨탠츠 인풋 핸들러
+   */
   const contentInputHaedler = (event) => {
     setContentInput(event.target.value);
   };
+  /**
+   * 리스트 추가 이벤트
+   */
   const todoAddHaedler = () => {
     let addtodo = {
       id: todoList.length + 1,
@@ -31,7 +38,9 @@ function App() {
       setContentInput("");
     }
   };
-
+  /**
+   * 완료버튼을 누르면 상태를 done으로 바꿔주는 함수
+   */
   const doneEvent = (id) => {
     let listFil = todoList.filter((x) => {
       return x.id === id;
@@ -40,7 +49,9 @@ function App() {
     copy[0].status = "done";
     setTodoList(copy);
   };
-
+  /**
+   * 리스트를 삭제하는 함수
+   */
   const deleteList = (id) => {
     let listFil = todoList.filter((x) => {
       return x.id != id;
@@ -130,31 +141,8 @@ function App() {
   );
 }
 
-const TodoList = ({ item, doneEvent, deleteList }) => {
-  return (
-    <li key={item.id}>
-      <div className="todo_content">
-        <p className="title">{item.title}</p>
-        <p className="content_text">{item.content}</p>
-      </div>
-      <div className="btn_box">
-        <p
-          onClick={() => {
-            doneEvent(item.id);
-          }}
-        >
-          완료
-        </p>
-        <p
-          onClick={() => {
-            deleteList(item.id);
-          }}
-        >
-          삭제
-        </p>
-      </div>
-    </li>
-  );
-};
+// const TodoListWrap = ()=>{
+//   return()
+// }
 
 export default App;
