@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul,li,ol{
+  list-style: none;
+}
+a{
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.App{
+  width: 100%;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.todo_wrap{
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.input_wrap{
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
 }
 
-.App-link {
-  color: #61dafb;
+.input_wrap > div {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input_wrap > div:nth-child(3){
+  width: 20%;
+}
+
+.input_wrap > div > p{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.input_wrap > div > input{
+  font-size: 1.2rem;
+  margin-left: 2%;
+  padding: 1.5%;
+  border: 0;
+  border-radius: 5px;
+}
+
+.input_wrap > div > button{
+  font-size: 1rem;
+  padding: 3%;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 2px solid #000;
+}
+.input_wrap > div > button:hover{
+  background-color: #000;
+  color: #fff;
+}
+
+
+
+
+.content_wrap{
+  flex: 7;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content_wrap > div{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content_wrap > div > div{
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.content_wrap > div > ul{
+  width: 85%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: scroll;
+}
+
+.content_wrap > div > ul::-webkit-scrollbar {
+  display: none;
+}
+
+.content_wrap > div > ul > li{
+  width: 100%;
+  height: 100px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content_wrap > div > ul > li > .todo_content{
+  width: 75%;
+  height: 100px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.content_wrap > div > ul > li > .todo_content > p{
+  font-size: 1.3rem;
+  margin: 1% 10%;
+}
+
+.content_wrap > div > ul > li > .todo_content > .title{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.content_wrap > div > ul > li > .todo_content > .content_text{
+  width: 50%;
+  font-size: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.content_wrap > div > ul > li > .btn_box{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.content_wrap > div > ul > li > .btn_box > p{
+  border: 2px solid #000;
+  padding: 8%;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-right: 10%;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.content_wrap > div > ul > li > .btn_box > p:hover{
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
 }
