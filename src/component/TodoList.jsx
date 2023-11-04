@@ -1,30 +1,28 @@
-import React from 'react'
+import React from "react";
+import Button from "./Button";
 
-const TodoList = ({ item, doneEvent, deleteList }) => {
-    return (
-      <li key={item.id}>
-        <div className="todo_content">
-          <p className="title">{item.title}</p>
-          <p className="content_text">{item.content}</p>
-        </div>
-        <div className="btn_box">
-          <p
-            onClick={() => {
-              doneEvent(item.id);
-            }}
-          >
-            완료
-          </p>
-          <p
-            onClick={() => {
-              deleteList(item.id);
-            }}
-          >
-            삭제
-          </p>
-        </div>
-      </li>
-    );
-  };
+const TodoList = ({ item, doneEvent, deleteList, modalListRead }) => {
+  return (
+    <li key={item.id}>
+      <div className="todo_content">
+        <p className="title">{item.title}</p>
+        <p
+          className="content_text"
+          onClick={() => {
+            modalListRead(item.id);
+          }}
+        >
+          {item.content}
+        </p>
+      </div>
+      <div className="btn_box">
+        <Button doneEvent={doneEvent} id={item.id}>
+          완료
+        </Button>
+        <Button deleteList={deleteList} id={item.id}>삭제</Button>
+      </div>
+    </li>
+  );
+};
 
-export default TodoList
+export default TodoList;

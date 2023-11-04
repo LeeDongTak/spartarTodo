@@ -16,6 +16,86 @@ a{
   height: 100vh;
 }
 
+.list_content_modal{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+}
+
+.list_content_modal > .bg{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  opacity: 30%;
+  background-color: #000;
+}
+
+.list_content_modal > .modal_wrap{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  width: 32%;
+  height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 #666;
+  background-color: #fff;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.list_content_modal > .modal_wrap > .modal_text_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80%;
+}
+.list_content_modal > .modal_wrap > .modal_text_box > .modal_title{
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 10%;
+}
+.list_content_modal > .modal_wrap > .modal_text_box > .modal_content{
+  font-size: 1.2rem;
+  /* padding: 0 10%; */
+  margin-top: 5%;
+}
+.list_content_modal > .modal_wrap > .modal_btn_box{
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+.list_content_modal > .modal_wrap > .modal_btn_box > button{
+  padding: 3% 8%;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.list_content_modal > .modal_wrap > .modal_btn_box > button:hover{
+  background-color: #000;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .todo_wrap{
   width: 1200px;
@@ -155,7 +235,7 @@ a{
   align-items: center;
   justify-content: flex-end;
 }
-.content_wrap > div > ul > li > .btn_box > p{
+.content_wrap > div > ul > li > .btn_box > button{
   border: 2px solid #000;
   padding: 8%;
   font-weight: bold;
@@ -163,9 +243,10 @@ a{
   margin-right: 10%;
   text-align: center;
   font-size: 0.8rem;
+  background-color: #fff;
 }
 
-.content_wrap > div > ul > li > .btn_box > p:hover{
+.content_wrap > div > ul > li > .btn_box > button:hover{
   background-color: #000;
   color: #fff;
   cursor: pointer;
