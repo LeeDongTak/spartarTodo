@@ -1,3 +1,13 @@
+일정을 관리하는 todo리스트 입니다. 
+상단의 input에서 제목과 내용을 입력한 후 추가하기 버튼을 누르면 리스트가 추가 됩니다 .
+만악 제목이나 내옹을 입력하기 않았다면 오류메세지가 나오고 제목을 15글자로 제한을 두엇습니다 .
+리스트는 working에 우선 추가되고 일정을 완료 하였다면 '완료'버튼을 클릭하면 done으로 이동하게 됩니다. 취소하고 싶으시면 done에 취소버튼을 누르시면 됩니다. 
+일정을 삭제하려면 삭제 버튼을 클릭하여 삭제할 수 있습니다 
+
+리스트의 내용을 클릭하게 되면 자세히 볼 수 있는 모달창이 나오고 모달창에서 일정을 수정할 수 있습니다. 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
