@@ -1,7 +1,16 @@
 import React from "react";
 
-function Button({ todoAddHaedler, doneEvent, deleteList, updateBtnEvent, updateCommitBtnEvent, modalClosetBtnEvent, id, children }) {
-  let props = "";
+function Button({
+  todoAddHaedler,
+  doneEvent,
+  deleteList,
+  updateBtnEvent,
+  updateCommitBtnEvent,
+  modalClosetBtnEvent,
+  id,
+  children,
+}) {
+  let props;
   switch (children) {
     case "추가하기":
       props = todoAddHaedler;
@@ -9,19 +18,19 @@ function Button({ todoAddHaedler, doneEvent, deleteList, updateBtnEvent, updateC
     case "완료":
       props = doneEvent;
       break;
-    case "삭제":
-      props = deleteList;
+    case "취소":
+      props = doneEvent;
       break;
     case "삭제":
       props = deleteList;
       break;
-      case "수정":
+    case "수정":
       props = updateBtnEvent;
       break;
-      case "수정완료":
+    case "수정완료":
       props = updateCommitBtnEvent;
       break;
-      case "닫기":
+    case "닫기":
       props = modalClosetBtnEvent;
       break;
     default:
@@ -32,6 +41,7 @@ function Button({ todoAddHaedler, doneEvent, deleteList, updateBtnEvent, updateC
     <button
       onClick={() => {
         props(id);
+        console.log(props);
       }}
     >
       {children}

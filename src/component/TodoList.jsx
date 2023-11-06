@@ -16,9 +16,14 @@ const TodoList = ({ item, doneEvent, deleteList, modalListRead }) => {
         </p>
       </div>
       <div className="btn_box">
-        <Button doneEvent={doneEvent} id={item.id}>
-          완료
-        </Button>
+        {item.status === false
+        ?<Button doneEvent={doneEvent} id={item.id}>
+        완료
+      </Button>
+        :<Button doneEvent={doneEvent} id={item.id}>
+        취소
+      </Button>
+        }
         <Button deleteList={deleteList} id={item.id}>삭제</Button>
       </div>
     </li>

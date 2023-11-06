@@ -42,6 +42,8 @@ function App() {
     };
     if (titleInput === "") {
       alert("제목을 입력해 주세요");
+    }else if (titleInput.length > 15) {
+      alert("제목은 15글자 이하로 입력해 주세요");
     } else if (contentInput === "") {
       alert("내용을 입력해 주세요");
     } else {
@@ -51,15 +53,17 @@ function App() {
     }
   };
   /**
-   * 완료버튼을 누르면 상태를 done으로 바꿔주는 함수
+   * 완료버튼을 누르면 상태를 done으로 바꿔주고 취소버튼을 누르면 완료를 취소하는 함수
    */
   const doneEvent = (id) => {
-    // let listcopy = [...todoList]
     let listMap = todoList.map((x) => {
-      return x.id === id ? { ...x, status: true } : x;
+      // 리스트의 id와 매개변수로 들어온 id가 같은 요소를 변경하는데 만약 id가 같은 리스트의 status가
+      // false라면 true로 바꾸고 true라면 false로 바꾼다
+      return x.id === id ? x.status === true ? { ...x, status: false } : { ...x, status: true } : x;
     });
     setTodoList([...listMap]);
   };
+  
   /**
    * 리스트를 삭제하는 함수
    */
@@ -127,7 +131,6 @@ function App() {
     setTodoList([...listMap]);
     setModalTitleInput("");
     setModalContentInput("");
-    console.log(listMap);
   };
   //  console.log(todoList)
 

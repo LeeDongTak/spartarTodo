@@ -226,6 +226,11 @@ a{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  cursor: pointer;
+}
+.content_wrap > div > ul > li > .todo_content > .content_text:hover{
+  color: #00f;
+  text-decoration: underline;
 }
 
 .content_wrap > div > ul > li > .btn_box{
